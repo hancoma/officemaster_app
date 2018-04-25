@@ -1,6 +1,6 @@
 # Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
 
-A PhoneGap Hello World template
+officemaster 개발 자원 테스트 어플
 
 ## Usage
 
