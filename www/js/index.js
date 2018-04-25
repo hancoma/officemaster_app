@@ -68,14 +68,9 @@ start_app();
 };
 
 function start_app() {
-     if(!member_srl) {
-        console.log("로그인 해주세요.");
-    location.replace('login.html') ;
-    } else {
-     
-        console.log("로그인 되었음.");
+    
     location.replace('main.html') ;
         
-    }
+    
 }
  

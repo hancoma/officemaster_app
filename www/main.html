@@ -34,7 +34,7 @@
 <header class="bar bar-nav">
  <a class="icon icon-gear pull-right"  onclick="open_right();"></a>
 
-  <h1 class="title">유지텔 UGTel</h1>
+  <h1 class="title">OFFICE MASTER</h1>
 </header>
 
 <div id="main_contents" style="overflow-y: scroll; width:100%; height:100%;  padding-bottom: 100px; padding-top:0px;">
@@ -50,14 +50,7 @@
 
                                 <div class="uk-offcanvas-bar uk-offcanvas-bar-flip" mode="push" id="right_menu">
  <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="">
-                                        <li><a href="#" onclick="logout()">로그아웃</a></li>
-                                      
-                                    
-
-                                        <li><a href="#" onclick="open_url('http://homes1004.kr/xe/index.php?act=dispMemberModifyInfo')">정보수정</a></li>
-                                        <li><a href="#" onclick="open_url('http://homes1004.kr/xe/index.php?act=dispMemberModifyInfo')">회원사진</a></li>
-                                        <li><a href="#" onclick="open_url('http://homes1004.kr/xe/index.php?act=dispMemberModifyInfo')">나의번역목록</a></li>
-                                        <li><a href="#" onclick="open_url('http://homes1004.cafe24.com/address_update.php')">주소록동기화</a></li>
+                                        <li><a href="#" onclick="">주소록 가져 오기</a></li>
                                         
                                     </ul>
                                    
@@ -66,34 +59,7 @@
 
                             </div>
 
-<div id="make_chat_uk_modal" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: scroll;">
-                                <div class="uk-modal-dialog">
-                                    <button type="button" class="uk-modal-close uk-close"></button>
-                                    <div class="uk-modal-header">
-                                        <h2 id="member_modal_title">방만들기</h2>
-                                    </div>
-                                    <p id="member_modal_contents">
-                                    <form class="uk-form">
 
-    <fieldset data-uk-margin>
-        <legend>방정보를 입력하세요.</legend>
-        <input type="text" name="chat_room_title" id="chat_room_title" placeholder="방 제목을 입력하세요.">
-        
-        <select name="chat_mode" id="chat_mode">
-            <option value="2">비공개</option>
-            <option value="1">공개</option>
-        </select>
-        
-    </fieldset>
-
-</form>
-                                    </p>
-                                    <div class="uk-modal-footer uk-text-right" id="member_modal_btn">
-                                   <button type="button" class="uk-button uk-modal-close">닫기</button> 
-                                    <a href=# class="uk-button uk-button-success" onclick="make_chat_room()">방만들기</a> 
-                                    </div>
-                                </div>
-                            </div>
  <div id="contacts_modal" class="modal">
   <header class="bar bar-nav">
     <a class="icon icon-close pull-right" href="#contacts_modal"></a>
@@ -106,443 +72,17 @@
 
   </div>
 </div>
-                           
-<div id="bang_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#bang_modal"></a>
-    <h1 class="title">매물등록</h1>
-  </header>
-
-  <div class="content" style="margin-top:10px;">
-   
-  <input type="text" placeholder="매물명">
-  <input type="text" placeholder="주소">
- <a href=# onclick="getImage()">사진추가</a> 
-  <textarea rows="5"></textarea>
-  <button class="btn btn-positive btn-block" >등록하기</button>
-
-  </div>
-</div>
-<div id="chat_room_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-left" href="#chat_room_modal"></a>
-    <a data-uk-modal="{target:'#chat_setup_modal'}" class="icon icon-more-vertical pull-right"></a>
-
-    
-    <h1 class="title">대화방</h1>
-
-  <div class="uk-width-1-1"  style="float:left; position: fixed; margin-top: 50px; width:100%;" >
-    
-
-     <select name="to_lan" id="to_lan" onchange="re_open_chat_room();" class="uk-width-1-2" style="float:right">
-    <option value="">select language</option>
-<option value="af">Afrikaans</option>
-<option value="sq">Albanian</option>
-<option value="am">Amharic</option>
-<option value="ar">Arabic</option>
-<option value="hy">Armenian</option>
-<option value="az">Azerbaijani</option>
-<option value="eu">Basque</option>
-<option value="be">Belarusian</option>
-<option value="bn">Bengali</option>
-<option value="bs">Bosnian</option>
-<option value="bg">Bulgarian</option>
-<option value="ca">Catalan</option>
-<option value="ceb">Cebuano</option>
-<option value="ny">Chichewa</option>
-<option value="zh">Chinese Simplified</option>
-<option value="zh-TW">Chinese Traditional</option>
-<option value="co">Corsican</option>
-<option value="hr">Croatian</option>
-<option value="cs">Czech</option>
-<option value="da">Danish</option>
-<option value="nl">Dutch</option>
-<option value="en">English</option>
-<option value="eo">Esperanto</option>
-<option value="et">Estonian</option>
-<option value="tl">Filipino</option>
-<option value="fi">Finnish</option>
-<option value="fr">French</option>
-<option value="fy">Frisian</option>
-<option value="gl">Galician</option>
-<option value="ka">Georgian</option>
-<option value="de">German</option>
-<option value="el">Greek</option>
-<option value="gu">Gujarati</option>
-<option value="ht">Haitian Creole</option>
-<option value="ha">Hausa</option>
-<option value="haw">Hawaiian</option>
-<option value="iw">Hebrew</option>
-<option value="hi">Hindi</option>
-<option value="hmn">Hmong</option>
-<option value="hu">Hungarian</option>
-<option value="is">Icelandic</option>
-<option value="ig">Igbo</option>
-<option value="id">Indonesian</option>
-<option value="ga">Irish</option>
-<option value="it">Italian</option>
-<option value="ja">Japanese</option>
-<option value="jw">Javanese</option>
-<option value="kn">Kannada</option>
-<option value="kk">Kazakh</option>
-<option value="km">Khmer</option>
-<option value="ko">Korean</option>
-<option value="ku">Kurdish Kurmanji</option>
-<option value="ky">Kyrgyz</option>
-<option value="lo">Lao</option>
-<option value="la">Latin</option>
-<option value="lv">Latvian</option>
-<option value="lt">Lithuanian</option>
-<option value="lb">Luxembourgish</option>
-<option value="mk">Macedonian</option>
-<option value="mg">Malagasy</option>
-<option value="ms">Malay</option>
-<option value="ml">Malayalam</option>
-<option value="mt">Maltese</option>
-<option value="mi">Maori</option>
-<option value="mr">Marathi</option>
-<option value="mn">Mongolian</option>
-<option value="my">Myanmar Burmese</option>
-<option value="ne">Nepali</option>
-<option value="no">Norwegian</option>
-<option value="ps">Pashto</option>
-<option value="fa">Persian</option>
-<option value="pl">Polish</option>
-<option value="pt">Portuguese</option>
-<option value="pa">Punjabi</option>
-<option value="ro">Romanian</option>
-<option value="ru">Russian</option>
-<option value="sm">Samoan</option>
-<option value="gd">Scots Gaelic</option>
-<option value="sr">Serbian</option>
-<option value="st">Sesotho</option>
-<option value="sn">Shona</option>
-<option value="sd">Sindhi</option>
-<option value="si">Sinhala</option>
-<option value="sk">Slovak</option>
-<option value="sl">Slovenian</option>
-<option value="so">Somali</option>
-<option value="es">Spanish</option>
-<option value="su">Sundanese</option>
-<option value="sw">Swahili</option>
-<option value="sv">Swedish</option>
-<option value="tg">Tajik</option>
-<option value="ta">Tamil</option>
-<option value="te">Telugu</option>
-<option value="th">Thai</option>
-<option value="tr">Turkish</option>
-<option value="uk">Ukrainian</option>
-<option value="ur">Urdu</option>
-<option value="uz">Uzbek</option>
-<option value="vi">Vietnamese</option>
-<option value="cy">Welsh</option>
-<option value="xh">Xhosa</option>
-<option value="yi">Yiddish</option>
-<option value="yo">Yoruba</option>
-<option value="zu">Zulu</option>
-     </select>
- </div>
-  
-  </header>
-  <div id="chat_member_modal" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: scroll;">
-                                <div class="uk-modal-dialog">
-                                    <button type="button" class="uk-modal-close uk-close"></button>
-                                    <div class="uk-modal-header">
-                                        <h2>채팅방 참여자</h2>
-                                    </div>
-                                    <p id="chat_member_contents">
-                                      
-                                    </p>
-                                    <div class="uk-modal-footer uk-text-right">
-                                        <button type="button" class="uk-modal-close uk-button">닫기</button>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-<div id="chat_setup_modal" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: scroll;">
-                                <div class="uk-modal-dialog">
-                                    <button type="button" class="uk-modal-close uk-close"></button>
-                                    <div class="uk-modal-header">
-                                        <h2>채팅방</h2>
-                                    </div>
-                                    <p id="chat_setup_contents">
-                                      <!-- 수정 -->
-                                      <div class="uk-width-1-1 uk-button" onclick='chat_member_list()'>참여자목록</div>
-                                      <div class="uk-width-1-1 uk-button" onclick='find_member()'>초대하기</div>
-                                      <div class="uk-width-1-1 uk-button" onclick="delete_chat_room()" id="delete_chat_room" >대화방삭제</div>
-                                      <div class="uk-width-1-1 uk-button" onclick="close_chat_room()">나가기</div>
-                                      <!-- 방정 수정 끝-->
-                                    </p>
-                                    <div class="uk-modal-footer uk-text-right">
-                                        <button type="button" class="uk-modal-close uk-button">닫기</button>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-  <div class="content" style="background-color: #80D5FD;">
-    <div class="uk-grid uk-grid-small" id="chat_body" style="margin-bottom:40px;">
-    
-    
-    
-    </div> <div style="height: 50px;">
- </div>
-
-</div><nav class="bar bar-tab">
-  <div class="uk-grid" style="line-height: 40px; width:100%;">
-    <div class="uk-width-7-10 uk-text-center">
- <input type="hidden" name="room_no" value="" id="room_no">
- <textarea class="form-control" placeholder="MESSAGE" id="chat_msg" style="margin-left:10px;" onclick="re_open_chat_room();" cols="30" rows="2"></textarea>
-        
-        </div>
-        <div class="uk-width-3-10 uk-text-right">
-      <a href="#" class="uk-button uk-button-danger uk-button-small" id="send_btn" onclick="save_chat();">전송</a><span class="uk-button uk-button-success uk-button-small" onclick="getImage('1','chat');"><i class="uk-icon-file-image-o"></i></span>
-      </div>
-  </div>
-  </nav>
-  </div> 
-
-<div id="chat_member_list_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#chat_member_list_modal"></a>
-    <h1 class="title">대화 참여자 보기</h1>
-  </header>
-
-  <div class="content" id="chat_member_list_contents">
-    <p class="content-padded">목록</p>
-  </div>
-</div>  
-<div id="wallet_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#wallet_modal"></a>
-    <h1 class="title">Wallet</h1>
-  </header>
-
-  <div class="content" >
-    <p class="content-padded" id="wallet_contents"></p>
-  </div>
-</div>
-
-
-<div id="send_point_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#send_point_modal"></a>
-    <h1 class="title">포인트보내기</h1>
-  </header>
-
-  <div class="content" >
-    <p class="content-padded" id="send_point_contents"></p>
-  </div>
-</div>
-
-
-<div id="shop_info_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#shop_info_modal"></a>
-    <h1 class="title">상세 내용 보기</h1>
-  </header>
-
-  <div class="content" id="shop_contents">
-    <p class="content-padded">내용</p>
-  </div>
-</div>
-
-<div id="trans_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#trans_modal"></a>
-    <h1 class="title">번역기</h1>
-  </header>
-
-  <div class="content" id="trans_contents">
-    
-    <p class="content-padded">
-      <textarea name="trans_contents_box" id="trans_contents_box" cols="30" rows="10" class="uk-width-1-1" style="height:30%;"></textarea>
-      
-    <select id="trans_language2" name="trans_language2" class="uk-width-1-5">
-     <option value="af">Afrikaans</option>
-<option value="sq">Albanian</option>
-<option value="am">Amharic</option>
-<option value="ar">Arabic</option>
-<option value="hy">Armenian</option>
-<option value="az">Azerbaijani</option>
-<option value="eu">Basque</option>
-<option value="be">Belarusian</option>
-<option value="bn">Bengali</option>
-<option value="bs">Bosnian</option>
-<option value="bg">Bulgarian</option>
-<option value="ca">Catalan</option>
-<option value="ceb">Cebuano</option>
-<option value="ny">Chichewa</option>
-<option value="zh">Chinese Simplified</option>
-<option value="zh-TW">Chinese Traditional</option>
-<option value="co">Corsican</option>
-<option value="hr">Croatian</option>
-<option value="cs">Czech</option>
-<option value="da">Danish</option>
-<option value="nl">Dutch</option>
-<option value="en">English</option>
-<option value="eo">Esperanto</option>
-<option value="et">Estonian</option>
-<option value="tl">Filipino</option>
-<option value="fi">Finnish</option>
-<option value="fr">French</option>
-<option value="fy">Frisian</option>
-<option value="gl">Galician</option>
-<option value="ka">Georgian</option>
-<option value="de">German</option>
-<option value="el">Greek</option>
-<option value="gu">Gujarati</option>
-<option value="ht">Haitian Creole</option>
-<option value="ha">Hausa</option>
-<option value="haw">Hawaiian</option>
-<option value="iw">Hebrew</option>
-<option value="hi">Hindi</option>
-<option value="hmn">Hmong</option>
-<option value="hu">Hungarian</option>
-<option value="is">Icelandic</option>
-<option value="ig">Igbo</option>
-<option value="id">Indonesian</option>
-<option value="ga">Irish</option>
-<option value="it">Italian</option>
-<option value="ja">Japanese</option>
-<option value="jw">Javanese</option>
-<option value="kn">Kannada</option>
-<option value="kk">Kazakh</option>
-<option value="km">Khmer</option>
-<option value="ko">Korean</option>
-<option value="ku">Kurdish Kurmanji</option>
-<option value="ky">Kyrgyz</option>
-<option value="lo">Lao</option>
-<option value="la">Latin</option>
-<option value="lv">Latvian</option>
-<option value="lt">Lithuanian</option>
-<option value="lb">Luxembourgish</option>
-<option value="mk">Macedonian</option>
-<option value="mg">Malagasy</option>
-<option value="ms">Malay</option>
-<option value="ml">Malayalam</option>
-<option value="mt">Maltese</option>
-<option value="mi">Maori</option>
-<option value="mr">Marathi</option>
-<option value="mn">Mongolian</option>
-<option value="my">Myanmar Burmese</option>
-<option value="ne">Nepali</option>
-<option value="no">Norwegian</option>
-<option value="ps">Pashto</option>
-<option value="fa">Persian</option>
-<option value="pl">Polish</option>
-<option value="pt">Portuguese</option>
-<option value="pa">Punjabi</option>
-<option value="ro">Romanian</option>
-<option value="ru">Russian</option>
-<option value="sm">Samoan</option>
-<option value="gd">Scots Gaelic</option>
-<option value="sr">Serbian</option>
-<option value="st">Sesotho</option>
-<option value="sn">Shona</option>
-<option value="sd">Sindhi</option>
-<option value="si">Sinhala</option>
-<option value="sk">Slovak</option>
-<option value="sl">Slovenian</option>
-<option value="so">Somali</option>
-<option value="es">Spanish</option>
-<option value="su">Sundanese</option>
-<option value="sw">Swahili</option>
-<option value="sv">Swedish</option>
-<option value="tg">Tajik</option>
-<option value="ta">Tamil</option>
-<option value="te">Telugu</option>
-<option value="th">Thai</option>
-<option value="tr">Turkish</option>
-<option value="uk">Ukrainian</option>
-<option value="ur">Urdu</option>
-<option value="uz">Uzbek</option>
-<option value="vi">Vietnamese</option>
-<option value="cy">Welsh</option>
-<option value="xh">Xhosa</option>
-<option value="yi">Yiddish</option>
-<option value="yo">Yoruba</option>
-<option value="zu">Zulu</option>
-    </select>
-    <a href=# class="uk-button uk-button-success uk-width-1-5"  id="trans_btn" onclick="trans_btn();">
-  TRANS
-</a> <a href=# class="uk-button uk-button-danger uk-width-1-4"  id="trans_btn" onclick="trans_history_btn();">
-  HISTORY
-</a>
-    <textarea name="trans_contents_box2" id="trans_contents_box2" cols="30" rows="10" class="uk-width-1-1" style="height:30%;"></textarea>
-  </p>
-  </div>
-
-</div>
-
-
-<div id="trans_list_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#trans_list_modal"></a>
-    <h1 class="title">번역히스토리</h1>
-  </header>
-
-  <div class="content" id="trans_list_contents">
-
-  </div>
-
-</div>
-
-
-<div id="trans_view_modal" class="modal">
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" href="#trans_view_modal"></a>
-    <h1 class="title">번역내용</h1>
-  </header>
-
-  <div class="content" id="trans_view_contents">
-
-  </div>
-
-</div>
-
-<nav class="bar bar-tab bar-footer">
-  <a class="tab-item active" id="main_icon" href="#" onclick="chat_show()">
-    <span class="icon icon-home"></span>
-    <span class="tab-label">홈</span>
-  </a>
- 
- <a class="tab-item" href="#" id="board_icon" onclick="chat_show()">
-    <span class="icon uk-icon-wechat"></span>
-    <span class="tab-label">TALK</span>
-  </a>
-  <a class="tab-item" href="#" id="board_icon" onclick="trans_show()">
-    <span class="icon icon-compose"></span>
-    <span class="tab-label">번역기</span>
-  </a>
-  <a class="tab-item" href="#" id="board_icon" onclick="friend_add()">
-    <span class="icon icon-compose"></span>
-    <span class="tab-label">친구초대</span>
-  </a>
-    <a class="tab-item" href="#" id="board_icon" onclick="getImage_trans()">
-    <span class="icon icon-share"></span>
-    <span class="tab-label">사진인식</span>
-  </a>
-   <a class="tab-item" href="#" id="board_icon" onclick="address_list()">
-    <span class="icon icon-share"></span>
-    <span class="tab-label">주소록</span>
-  </a>
-  <a class="tab-item" href="#" id="board_icon" onclick="show_wallet()">
-    <span class="icon icon-pages"></span>
-    <span class="tab-label">Wallet</span>
-  </a>
-
  
 
-  <a class="tab-item" href="#"  id="exit_icon" href="#"  onclick="exit_show()">
-    <span class="icon uk-icon-close"></span>
-    <span class="tab-label">종료</span>
-  </a>
-</nav>
+
+
+
+
 
      <script type="text/javascript" charset="utf-8" src="js/PushNotification.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
-   <script type="text/javascript" src="js/marker.js"></script>
+
     
     <script type="text/javascript">
         app.initialize();
@@ -550,15 +90,12 @@
      <script type="text/javascript" src="js/common.js"></script>
           <script type="text/javascript" src="js/contacts.js"></script>
      <script type="text/javascript" src="js/camera.js"></script>
-     <script type="text/javascript" src="js/audiocapture.js"></script>
      <script type="text/javascript" src="js/comment.js"></script>
      <script type="text/javascript" src="js/chat.js"></script>
      <script type="text/javascript" src="js/right_menu.js"></script>
      <script type="text/javascript" src="js/board.js"></script> 
-     <script type="text/javascript" src="js/talk.js"></script> 
-      <script type="text/javascript" src="js/map.js"></script> 
 
-     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIjYYnR4RImDb8X_tD1s8ud0I0KeGAKDs"></script>
+     
  
 
 
