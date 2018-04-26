@@ -632,6 +632,14 @@ module.exports = [
         "id": "cordova-plugin-qrscanner.QRScannerProxy",
         "pluginId": "cordova-plugin-qrscanner",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-barcodescanner/www/barcodescanner.js",
+        "id": "cordova-plugin-barcodescanner.BarcodeScanner",
+        "pluginId": "cordova-plugin-barcodescanner",
+        "clobbers": [
+            "cordova.plugins.barcodeScanner"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -660,7 +668,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-sim": "1.3.3",
     "cordova-plugin-sms": "1.0.5",
-    "cordova-plugin-qrscanner": "2.5.0"
+    "cordova-plugin-qrscanner": "2.5.0",
+    "cordova-plugin-barcodescanner": "0.7.4"
 }
 // BOTTOM OF METADATA
 });

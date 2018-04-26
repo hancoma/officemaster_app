@@ -72,6 +72,9 @@
         },
         "cordova-plugin-qrscanner": {
             "PACKAGE_NAME": "com.ugtel.hancoma"
+        },
+        "cordova-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.officemaster.hancoma"
         }
     },
     "dependent_plugins": {
