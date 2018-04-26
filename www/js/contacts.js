@@ -43,21 +43,14 @@ save_phonenumber(name,telephone);
  
 
 };
-function view_sms_list () {
-     SMS.listSMS({}, function(data){
-          console.log('sms listed as json array');
-          //updateData( JSON.stringify(data) );
+function view_sms_list() {
+    console.log("문자가져오기실행");
+    
+          SMS.listSMS("{}", function(data){
+            console.log("문자");
+         // updateStatus('sms listed as json array');
+         // updateData( JSON.stringify(data) );
           
-          var html = "";
-            if(Array.isArray(data)) {
-              for(var i in data) {
-                var sms = data[i];
-                smsList.push(sms);
-                html += sms.address + ": " + sms.body + "<br/>";
-              }
-            }
-            console.log( html );
-            
           }, function(err){
             console.log('error list sms: ' + err);
           });
