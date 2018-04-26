@@ -2,7 +2,7 @@ var user_id = window.localStorage.getItem("user_id");
 var member_srl = window.localStorage.getItem("member_srl");
 var language = window.localStorage.getItem("language");
 var uuid=device.uuid;
-var basic_url="http://homes1004.cafe24.com/";
+var basic_url="http://officemaster.iwinv.net/";
 var room_no=0;
 var menu;
 function trans_show() {
@@ -14,7 +14,7 @@ function show_wallet() {
     $("#wallet_modal").addClass('active');
     var member_srl = window.localStorage.getItem("member_srl");
     console.log("지갑"+member_srl);
-     $.post("http://homes1004.cafe24.com/wallet_main.php",
+     $.post("http://officemaster.iwinv.net/wallet_main.php",
    { 
     
     member_srl:member_srl
@@ -33,7 +33,7 @@ function send_point() {
     var member_srl = window.localStorage.getItem("member_srl");
 
     console.log("보내기지갑"+member_srl);
-     $.post("http://homes1004.cafe24.com/send_point.php",
+     $.post("http://officemaster.iwinv.net/send_point.php",
    { 
     
     member_srl:member_srl
@@ -58,7 +58,7 @@ function point_press() {
     return;
   }
 
-   $.post("http://homes1004.cafe24.com/send_press.php",
+   $.post("http://officemaster.iwinv.net/send_press.php",
    { 
     member_srl:member_srl,
     member_srl2:member_srl2,
@@ -83,7 +83,7 @@ function trans_history_btn() {
 function trans_list_view() {
      var member_srl = window.localStorage.getItem("member_srl");
 
-     $.post("http://homes1004.cafe24.com/trans_list.php",
+     $.post("http://officemaster.iwinv.net/trans_list.php",
    {
     
     member_srl:member_srl
@@ -99,7 +99,7 @@ function trans_view_contents(no){
   var no=no;
       $("#trans_view_modal").addClass('active');
 
-$.post("http://homes1004.cafe24.com/trans_view.php",
+$.post("http://officemaster.iwinv.net/trans_view.php",
    {
     
     no:no
@@ -113,7 +113,7 @@ $("#trans_view_contents").html(data);
 }
 
 function friend_add() {
-    var url="http:/homes1004.cafe24.com/kakaolink.php"
+    var url="http:/officemaster.iwinv.net/kakaolink.php"
   open_web(url);
 }
 
@@ -153,7 +153,7 @@ function trans_btn() {
   var member_srl = window.localStorage.getItem("member_srl");
   
   console.log(trans_contents);
-  $.post("http://homes1004.cafe24.com/trans_app.php",
+  $.post("http://officemaster.iwinv.net/trans_app.php",
    {
     trans_contents:trans_contents,
   
@@ -170,7 +170,7 @@ function  trans_save_btn(argument) {
   var member_srl = window.localStorage.getItem("member_srl");
 
   alert_msg("알림","번역 내용이 저장 되었습니다.");
-  $.post("http://homes1004.cafe24.com/trans_save_app.php",
+  $.post("http://officemaster.iwinv.net/trans_save_app.php",
    {
     member_srl:member_srl,
     trans_contents2:trans_contents2
@@ -188,7 +188,7 @@ function save_room() {
     
     var params = jQuery("#room_form").serialize(); // serialize() : 입력된 모든Element(을)를 문자열의 데이터에 serialize 한다.
     jQuery.ajax({
-        url: 'http://homes1004.cafe24.com/save_room.php',
+        url: 'http://officemaster.iwinv.net/save_room.php',
         type: 'POST',
         data:params,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8', 
@@ -221,7 +221,7 @@ function alert_msg(title,msg) {
 );
 }
 function load_left() {
-    $.post("http://ku4h.com/left_menu_app.php",
+    $.post("http://officemaster.iwinv.net/left_menu_app.php",
    {
     
     
@@ -232,7 +232,7 @@ $("#left_menu").html(data);
 }
 
 function load_right() {
-    $.post("http://ku4h.com/right_menu_app.php",
+    $.post("http://officemaster.iwinv.net/right_menu_app.php",
    {
     
     
@@ -251,7 +251,7 @@ alert(member_srl);
    $.ajax({
             type:"GET",
             data: { member_srl : member_srl },
-            url:"http://homes1004.cafe24.com/bang_list.php",
+            url:"http://officemaster.iwinv.net/bang_list.php",
             success:function(data){
                 $("#main_contents").html(data);
             }
@@ -262,7 +262,7 @@ function input_bang() {
    $.ajax({
             type:"GET",
             data: { uuid : uuid },
-            url:"http://homes1004.cafe24.com/bang_input.php",
+            url:"http://officemaster.iwinv.net/bang_input.php",
             success:function(data){
                 $("#main_contents").html(data);
             }
@@ -334,7 +334,7 @@ function chat_show() {
   $.ajax({
             type:"GET",
             data: { member_srl : member_srl },
-            url:"http://homes1004.cafe24.com/chat/chat_room_list_app.php",
+            url:"http://officemaster.iwinv.net/chat/chat_room_list_app.php",
             success:function(data){
              
                 $("#chat_contents").html(data);
@@ -349,7 +349,7 @@ function talk_show() {
  $("#chat_icon").addClass('active');
  console.log(member_srl+"talk");
 
- $.post("http://ku4h.com/talk_list_app.php",
+ $.post("http://officemaster.iwinv.net/talk_list_app.php",
    {
     member_srl:member_srl
     
@@ -366,7 +366,7 @@ function photo_show(cat) {
   var cat=cat;
   // 지도 숨김 
   $("#photo_icon").addClass('active');
- $.post("http://ku4h.com/photo_list_app.php",
+ $.post("http://officemaster.iwinv.net/photo_list_app.php",
    {
     cat:cat
     
@@ -384,7 +384,7 @@ function photo_tag_show(tag) {
   // 지도 숨김 
   console.log(tag);
   $("#photo_icon").addClass('active');
- $.post("http://ku4h.com/photo_list_app.php",
+ $.post("http://officemaster.iwinv.net/photo_list_app.php",
    {
   
     tag:tag
@@ -412,7 +412,7 @@ function freeboard_show(cat) {
   member_srl=member_srl;
 $("#board_icon").addClass('active');
   $("#top_banner").html("커뮤니티");
- $.post("http://ku4h.com/freeboard_list_app.php",
+ $.post("http://officemaster.iwinv.net/freeboard_list_app.php",
    {
     cat:cat,
     member_srl:member_srl
@@ -431,7 +431,7 @@ function shop_show() {
   $("#shop_icon").addClass('active');
   $.ajax({
             type:"GET",
-            url:"http://www.ku4h.com/shop_list.php",
+            url:"http://www.officemaster.iwinv.net/shop_list.php",
             success:function(data){
                 $("#main_contents").html(data);
             }
@@ -443,7 +443,7 @@ function blog_show() {
   $("#blog_icon").addClass('active');
   $.ajax({
             type:"GET",
-            url:"http://www.ku4h.com/atopy_blog.php",
+            url:"http://www.officemaster.iwinv.net/atopy_blog.php",
             success:function(data){
                 $("#main_contents").html(data);
             }
@@ -455,7 +455,7 @@ function qna_show(cat) {
    $("#map").hide();
   $("#top_banner").show();
   $("#top_banner").html("qna");
- $.post("http://ku4h.com/qna_list_app.php",
+ $.post("http://officemaster.iwinv.net/qna_list_app.php",
    {
     cat:cat
     
@@ -473,7 +473,7 @@ function goods_show(cat) {
    $("#map").hide();
   $("#top_banner").show();
   $("#top_banner").html("goods");
- $.post("http://ku4h.com/goods_list_app.php",
+ $.post("http://officemaster.iwinv.net/goods_list_app.php",
    {
     cat:cat
     
@@ -491,7 +491,7 @@ function parade_show(cat) {
    $("#map").hide();
   $("#top_banner").show();
   $("#top_banner").html("freeboard");
- $.post("http://gallerybear.com/parade_list_app.php",
+ $.post("http://officemaster.iwinv.net/parade_list_app.php",
    {
     cat:cat
     
@@ -509,7 +509,7 @@ function chat_job_show(cat) {
    $("#map").hide();
   $("#top_banner").show();
   $("#top_banner").html("freeboard");
- $.post("http://gallerybear.com/chat_job_app.php",
+ $.post("http://officemaster.iwinv.net/chat_job_app.php",
    {
     sub_code:cat
     
@@ -526,7 +526,7 @@ function friend_show() {
     $("#map").hide();
   $("#top_banner").show();
  
-   $.post("http://gallerybear.com/around_list_app.php",
+   $.post("http://officemaster.iwinv.net/around_list_app.php",
    {
     
     
@@ -542,7 +542,7 @@ UIkit.offcanvas.hide('#offcanvas-left');
 function more_friend() {
   var last_no=$("#last_no").val();
   console.log(last_no);
-    $.post("http://gallerybear.com/around_list_app.php",
+    $.post("http://officemaster.iwinv.net/around_list_app.php",
    {
     last_no:last_no
     
@@ -562,7 +562,7 @@ function global_show(sub_code) {
    $("#map").hide();
   $("#top_banner").show();
  
-   $.post("http://gallerybear.com/global_list_app.php",
+   $.post("http://officemaster.iwinv.net/global_list_app.php",
    {
     sub_code:sub_code
     
@@ -579,7 +579,7 @@ function more_global(sub_code) {
   var last_no=$("#last_no").val();
   var sub_code=sub_code;
   console.log(last_no);
-    $.post("http://gallerybear.com/global_list_app.php",
+    $.post("http://officemaster.iwinv.net/global_list_app.php",
    {
     last_no:last_no,
     sub_code:sub_code
@@ -603,16 +603,16 @@ function premium_show(sub_code) {
   $("#top_banner").show();
  
   if (sub_code==1) {
-    var url="http://gallerybear.com/premium1_app.php";
+    var url="http://officemaster.iwinv.net/premium1_app.php";
   }
   if (sub_code==2) {
-    var url="http://gallerybear.com/premium2_app.php";
+    var url="http://officemaster.iwinv.net/premium2_app.php";
   }
   if (sub_code==3) {
-    var url="http://gallerybear.com/premium3_app.php";
+    var url="http://officemaster.iwinv.net/premium3_app.php";
   }
   if (sub_code==4) {
-    var url="http://gallerybear.com/premium4_app.php";
+    var url="http://officemaster.iwinv.net/premium4_app.php";
   }
 
    $.post(url,
@@ -662,7 +662,7 @@ function global_menu_show() {
 // 맵 보이기 
 function map_show(kind_no) {
   var kind_no=kind_no;
-  var url="http://gallerybear.com/map_kind_app.php";
+  var url="http://officemaster.iwinv.net/map_kind_app.php";
   UIkit.offcanvas.hide('#offcanvas-left');
    $.post(url,
    {
@@ -683,19 +683,19 @@ function contents_modal_show(menu,no) {
     var no=no;
    console.log(member_srl);
     if (menu=="photo") {
-      var url="http://ku4h.com/photo_info_modal_app.php";
+      var url="http://officemaster.iwinv.net/photo_info_modal_app.php";
     }
     if (menu=="freeboard") {
-      var url="http://ku4h.com/freeboard_info_modal_app.php";
+      var url="http://officemaster.iwinv.net/freeboard_info_modal_app.php";
     }
      if (menu=="qna") {
-      var url="http://ku4h.com/qna_info_modal_app.php";
+      var url="http://officemaster.iwinv.net/qna_info_modal_app.php";
     }
      if (menu=="goods") {
-      var url="http://ku4h.com/goods_info_modal_app.php";
+      var url="http://officemaster.iwinv.net/goods_info_modal_app.php";
     }
     if (menu=="shop") {
-     var url="http://ku4h.com/shop_info_modal_app.php"; 
+     var url="http://officemaster.iwinv.net/shop_info_modal_app.php"; 
     }
 
 
@@ -721,7 +721,7 @@ var modal = UIkit.modal("#contents_uk_modal");
 
 function member_info_modal_show(memberuid) {
   var memberuid=memberuid;
-    $.post("http://gallerybear.com/member_info_modal_app.php",
+    $.post("http://officemaster.iwinv.net/member_info_modal_app.php",
    {
     no:memberuid
     
@@ -749,7 +749,7 @@ function open_shop(no) {
   var no=no;
   console.log(no);
   $("#shop_modal_contents").html("");
-    $.post("http://ku4h.com/shop_info_modal_app.php",
+    $.post("http://officemaster.iwinv.net/shop_info_modal_app.php",
    {
     no:no
     
@@ -776,7 +776,7 @@ function zzim_member(uid) {
  
   var uid2=uid;
   console.log(memberuid+" "+uid2);
-   $.post("http://gallerybear.com/add_zzim.php",
+   $.post("http://officemaster.iwinv.net/add_zzim.php",
    {
     uid:memberuid,
     uid2:uid2
@@ -791,7 +791,7 @@ function msg_send(uid,msg) {
   var my_uid=memberuid;
   var by_uid=uid;
   var msg=msg;
-    $.post("http://gallerybear.com/msg_save_app.php",
+    $.post("http://officemaster.iwinv.net/msg_save_app.php",
    {
     my_uid:my_uid,
     by_uid:by_uid,
@@ -808,7 +808,7 @@ function msg_send(uid,msg) {
 function add_photo(cat) {
   var cat=cat;
   console.log("category="+cat)
-    $.post("http://ku4h.com/photo_camera_app.php",
+    $.post("http://officemaster.iwinv.net/photo_camera_app.php",
    {
     member_srl:member_srl,
     cat:cat
@@ -832,7 +832,7 @@ var modal = UIkit.modal("#add_contents_uk_modal");
 function add_freeboard(cat) {
   var cat=cat;
   console.log("freeboard category="+member_srl);
-    $.post("http://ku4h.com/freeboard_app.php",
+    $.post("http://officemaster.iwinv.net/freeboard_app.php",
    {
     member_srl:member_srl,
     cat:cat
@@ -856,7 +856,7 @@ var modal = UIkit.modal("#add_contents_uk_modal");
 function add_qna(cat) {
   var cat=cat;
   console.log("qna category="+member_srl);
-    $.post("http://ku4h.com/qna_app.php",
+    $.post("http://officemaster.iwinv.net/qna_app.php",
    {
     member_srl:member_srl,
     cat:cat
@@ -881,7 +881,7 @@ var modal = UIkit.modal("#add_contents_uk_modal");
 function add_goods(cat) {
   var cat=cat;
   console.log("goods category="+member_srl);
-    $.post("http://ku4h.com/goods_app.php",
+    $.post("http://officemaster.iwinv.net/goods_app.php",
    {
     member_srl:member_srl,
     cat:cat
@@ -905,7 +905,7 @@ var modal = UIkit.modal("#add_contents_uk_modal");
 function add_parade(cat) {
   var cat=cat;
   console.log("category="+cat)
-    $.post("http://gallerybear.com/parade_app.php",
+    $.post("http://officemaster.iwinv.net/parade_app.php",
    {
     memberuid:memberuid,
     cat:cat
@@ -930,7 +930,7 @@ var modal = UIkit.modal("#add_contents_uk_modal");
 function file_check(no) {
   var no=no;
   console.log(no);
-  $.post("http://gallerybear.com/file_check_app.php",
+  $.post("http://officemaster.iwinv.net/file_check_app.php",
    {
     memberuid:memberuid,
     no:no
@@ -947,7 +947,7 @@ function file_check(no) {
 function file_delete(no) {
   var no=no;
   console.log(no);
-  $.post("http://gallerybear.com/file_delete_app.php",
+  $.post("http://officemaster.iwinv.net/file_delete_app.php",
    {
     memberuid:memberuid,
     no:no
@@ -1012,7 +1012,7 @@ function view_mypage() {
   function delete_contents(mode,no) {
   var mode=mode;
    var no=no;
-    $.post("http://ku4h.com/freeboard_delete.php",
+    $.post("http://officemaster.iwinv.net/freeboard_delete.php",
    {
    
     no:no
@@ -1028,7 +1028,7 @@ function view_mypage() {
  
    var no=no;
 
-    $.post("http://ku4h.com/freeboard_comment.php",
+    $.post("http://officemaster.iwinv.net/freeboard_comment.php",
    {
    
     no:no
@@ -1043,7 +1043,7 @@ function view_mypage() {
 
 function check_msg() {
  console.log("메시지 채크");
-  $.post("http://ku4h.com/check_msg.php",
+  $.post("http://officemaster.iwinv.net/check_msg.php",
    {
     member_srl:member_srl
        },

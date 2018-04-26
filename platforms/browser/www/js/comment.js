@@ -2,7 +2,7 @@ function save_freeboard_comment(no) {
 	var no=no;
 	var freeboard_comment=$("#freeboard_comment").val();
   console.log(member_srl);
-	  $.post("http://homes1004.cafe24.com/freeboard_comment_save.php",
+	  $.post("http://officemaster.iwinv.net/freeboard_comment_save.php",
    {
     no:no,
     member_srl:member_srl,
@@ -24,7 +24,7 @@ function save_qna_comment(no) {
   var no=no;
   var qna_comment=$("#qna_comment").val();
   console.log(member_srl);
-    $.post("http://homes1004.cafe24.com/qna_comment_save.php",
+    $.post("http://officemaster.iwinv.net/qna_comment_save.php",
    {
     no:no,
     member_srl:member_srl,
@@ -46,7 +46,7 @@ function save_qna_comment(no) {
 function save_parade_comment(no) {
 	var no=no;
 	var parade_comment=$("#parade_comment").val();
-	  $.post("http://homes1004.cafe24.com/parade_comment_save.php",
+	  $.post("http://officemaster.iwinv.net/parade_comment_save.php",
    {
     no:no,
     memberuid:memberuid,

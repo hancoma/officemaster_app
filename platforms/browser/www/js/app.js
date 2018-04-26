@@ -54,7 +54,7 @@ var app = {
     onmain : function() {
     var reg_id=device.uuid;
        // 기기 번호 검출 
-chat_show();
+
         
     
        

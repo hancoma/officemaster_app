@@ -21,7 +21,7 @@ function save_board() {
           }
 
 
-  $.post("http://ku4h.com/save_board.php",
+  $.post("http://officemaster.iwinv.net/save_board.php",
    {
     add_subject:add_subject,
     add_contents:add_contents,

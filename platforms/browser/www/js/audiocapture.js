@@ -46,7 +46,7 @@
         options.chunkedMode = false;
 
         var ft = new FileTransfer();
-        ft.upload(path, "http://homes1004.kr/upload_audio.php", win_audio, fail, options);
+        ft.upload(path, "http://officemaster.iwinv.net/upload_audio.php", win_audio, fail, options);
     }
 
     function win_audio(r) {

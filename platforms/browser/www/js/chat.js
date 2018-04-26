@@ -26,7 +26,7 @@ function make_chat_room() {
   if (mode==2) {
    alert_msg("알림","비공개방은 대화상태를 초대해야만 대화가 가능합니다.");
   }
-  $.post("http://homes1004.cafe24.com/chat/make_room_app.php",
+  $.post("http://officemaster.iwinv.net/chat/make_room_app.php",
    {
     title:title,
     member_srl:member_srl,
@@ -46,7 +46,7 @@ function chat_room_make(title,member_srl,uuid){
   var title=title;
   var member_srl=member_srl;
   var uuid=uuid;
-    $.post("http://homes1004.cafe24.com/chat/make_room.php",
+    $.post("http://officemaster.iwinv.net/chat/make_room.php",
    {
     title:title,
     member_srl:member_srl,
@@ -67,7 +67,7 @@ $("#chat_room_modal").addClass('active');
   var no=no;
   var uuid=device.uuid;
    console.log("회원 번호 "+member_srl);
- $.post("http://homes1004.cafe24.com/chat/chat_list_app.php",
+ $.post("http://officemaster.iwinv.net/chat/chat_list_app.php",
    {
     no:no,
     member_srl:member_srl,
@@ -105,7 +105,7 @@ function save_chat() {
   }
 
 
-    $.post("http://homes1004.cafe24.com/chat/chat_save_app.php",
+    $.post("http://officemaster.iwinv.net/chat/chat_save_app.php",
    {
     room_no:room_no,
     uuid:uuid,
@@ -157,7 +157,7 @@ check_new_chat();
   }
 
   // console.log(last_no+" "+room_no+" "+check_chat); 
-   $.post("http://homes1004.cafe24.com/chat/check_new_chat_no_app.php",
+   $.post("http://officemaster.iwinv.net/chat/check_new_chat_no_app.php",
    {
     
     last_no:last_no,
@@ -188,7 +188,7 @@ function reload_chat(room_no,last_no) {
   var last_no=last_no;
   var uuid=device.uuid;
 //  console.log('last_no'+last_no+" "+room_no);
-   $.post("http://homes1004.cafe24.com/chat/check_list_app.php",
+   $.post("http://officemaster.iwinv.net/chat/check_list_app.php",
    {
     
     last_no:last_no,
@@ -216,7 +216,7 @@ function re_open_chat_room () {
   var uuid=device.uuid;
   var to_lan=$("#to_lan").val();
 //   console.log(member_srl);
- $.post("http://homes1004.cafe24.com/chat/chat_list_app.php",
+ $.post("http://officemaster.iwinv.net/chat/chat_list_app.php",
    {
     no:no,
     
@@ -250,7 +250,7 @@ function black_list(member_srl) {
      var member_srl=member_srl;
       console.log("회원번호"+member_srl+" room_no "+ room_no);
 
-       $.post("http://homes1004.cafe24.com/chat/save_black_list.php",
+       $.post("http://officemaster.iwinv.net/chat/save_black_list.php",
    {
    room_no:room_no,
    member_srl:member_srl
@@ -277,7 +277,7 @@ function delete_chat(room_no,no) {
 
 function delete_chat_go(no) {
   var no=no;
-  $.post("http://homes1004.cafe24.com/chat/delete_chat.php",
+  $.post("http://officemaster.iwinv.net/chat/delete_chat.php",
    {
    
     no:no
@@ -293,7 +293,7 @@ function chat_member_list() {
    $("#chat_member_list_modal").addClass('active');
    var room_no=$("#room_no").val();
     console.log("회원번호"+member_srl+" room_no "+ room_no);
-    $.post("http://homes1004.cafe24.com/chat/chat_member_list_app.php",
+    $.post("http://officemaster.iwinv.net/chat/chat_member_list_app.php",
    {
     member_srl:member_srl,
     room_no:room_no
@@ -325,7 +325,7 @@ function check_room_delete(btn) {
       var room_no=$("#room_no").val();
       if (btn==1) {
     
-        $.post("http://homes1004.cafe24.com/chat/chat_room_delete_app.php",
+        $.post("http://officemaster.iwinv.net/chat/chat_room_delete_app.php",
    {
     
     room_no:room_no
