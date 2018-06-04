@@ -5,7 +5,7 @@
                 updateStatus('need run on mobile device for full functionalities.');
             }
         }
-        
+
 var smsList = [];
         var interceptEnabled = false;
         function initApp() {
@@ -45,7 +45,8 @@ var smsList = [];
         	if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
         }
         function listSMS() {
-    		updateData('');
+            console.log("문자 실행");
+    		updateData('ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ');
     		
         	if(SMS) SMS.listSMS({}, function(data){
     			updateStatus('sms listed as json array');

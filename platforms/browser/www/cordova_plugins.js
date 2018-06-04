@@ -640,6 +640,36 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.barcodeScanner"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
+        "id": "cordova-plugin-email-composer.EmailComposer",
+        "pluginId": "cordova-plugin-email-composer",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-email-composer/src/browser/EmailComposerProxy.js",
+        "id": "cordova-plugin-email-composer.EmailComposerProxy",
+        "pluginId": "cordova-plugin-email-composer",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
+        "id": "cordova-plugin-email-composer.EmailComposer",
+        "pluginId": "cordova-plugin-email-composer",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-email-composer/src/browser/EmailComposerProxy.js",
+        "id": "cordova-plugin-email-composer.EmailComposerProxy",
+        "pluginId": "cordova-plugin-email-composer",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -669,7 +699,8 @@ module.exports.metadata =
     "cordova-plugin-sim": "1.3.3",
     "cordova-plugin-sms": "1.0.5",
     "cordova-plugin-qrscanner": "2.5.0",
-    "cordova-plugin-barcodescanner": "0.7.4"
+    "cordova-plugin-barcodescanner": "0.7.4",
+    "cordova-plugin-email-composer": "0.8.3"
 }
 // BOTTOM OF METADATA
 });

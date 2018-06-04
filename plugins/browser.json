@@ -75,6 +75,9 @@
         },
         "cordova-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.officemaster.hancoma"
+        },
+        "cordova-plugin-email-composer": {
+            "PACKAGE_NAME": "com.officemaster.hancoma"
         }
     },
     "dependent_plugins": {
